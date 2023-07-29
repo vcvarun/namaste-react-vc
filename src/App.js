@@ -5,6 +5,7 @@ import { RestaurantsContainer } from './components/RestaurantsContainer';
 import { About, Contact, ErrorPage, RestaurantMenu } from "./components/pages";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
+// AppLayout
 const AppLayout = () => {
     return (
         <div className="app">
