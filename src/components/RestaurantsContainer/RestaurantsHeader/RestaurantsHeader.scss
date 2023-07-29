@@ -1,0 +1,15 @@
+.res-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(235, 232, 232);
+    align-items: baseline;
+
+    &__total-count {
+        font-size: 1.75rem;
+        font-family: 'Segoe UI Semibold';
+    }
+
+    &__filters {
+        cursor: pointer;
+    }
+}
