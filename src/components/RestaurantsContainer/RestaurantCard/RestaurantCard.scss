@@ -1,0 +1,28 @@
+.res-card {
+    width: 250px;
+    cursor: pointer;
+    max-height: fit-content;
+    padding: 1rem;
+
+    &__name {
+        font-weight: 500;
+    }
+
+    &__cuisine {
+        margin-top: 0.4rem;
+        font-size: 12px;
+    }
+
+    &__ratings {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 12px;
+    }
+}
+
+.res-card:hover {
+    border-color: #d3d5df;
+    box-shadow: 0 4px 7px 0 rgba(218,220,230,.6)
+}
