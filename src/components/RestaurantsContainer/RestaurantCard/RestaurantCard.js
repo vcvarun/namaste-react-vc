@@ -17,7 +17,7 @@ export const RestaurantCard = ({
                 src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${imageId}`}
                 />
             <div className='res-card__name'>{name}</div>
-            <div className='res-card__cuisine'>{cuisines.join(', ')}</div>
+            <div className='res-card__cuisine'>{cuisines?.join(', ')}</div>
             <div className='res-card__ratings'>
                 <span>{avgRating}</span>
                 <span>{deliveryTime} MINS</span>

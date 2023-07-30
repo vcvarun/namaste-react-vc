@@ -19,6 +19,9 @@ export const Header = () => {
                 <span>
                     <Link to="/cart">Cart</Link>
                 </span>
+                <span>
+                    <Link to="/grocery">Grocery</Link>
+                </span>
             </div>
         </div>
     );

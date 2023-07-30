@@ -1,26 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { MENU_API } from '../../utils';
+import React from 'react';
 import Shimmer from '../RestaurantsContainer/Shimmer/Shimmer';
+import useRestaurantMenu from '../../utils/hooks/useRestaurantMenu';
 
 export const RestaurantMenu = () => {
-    const { resId } = useParams();
-    const [menuItems, setMenuItems] = useState();
-
-    useEffect(() => {
-        getMenuData();
-    }, []);
-
-    const getMenuData = async () => {
-        const data = await fetch(`${MENU_API}${resId}`);
-        const menuData = await data.json();
-        setMenuItems(menuData);
-    };
+    const menuItems = useRestaurantMenu();
 
     if(!menuItems) {
         return <Shimmer />
     }
-
     const { name, areaName, avgRating, sla, costForTwoMessage } = menuItems?.data?.cards[0]?.card?.card?.info;
 
     const { itemCards, title } = menuItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;

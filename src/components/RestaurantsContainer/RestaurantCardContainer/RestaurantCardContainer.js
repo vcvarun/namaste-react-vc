@@ -6,9 +6,9 @@ import "./RestaurantCardContainer.scss";
 const RestaurantCardContainer = ({ restauarnts }) => {
   return (
     <div className="res-card-container">
-      {restauarnts.cards?.map((card) => {
+      {restauarnts?.map((card) => {
         const {
-          data: {
+          info: {
             name,
             cuisines,
             avgRating,
