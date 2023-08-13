@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 .app {
     font-family: 'Segoe UI';
     margin: 0 6.4rem;
