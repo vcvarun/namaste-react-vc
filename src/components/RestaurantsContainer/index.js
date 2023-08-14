@@ -1,2 +1,2 @@
-export { RestaurantCard } from './RestaurantCard/RestaurantCard';
+export { RestaurantCard, withPromotedLabel } from './RestaurantCard';
 export { RestaurantsContainer } from './RestaurantsContainer';

@@ -1,1 +1,1 @@
-export { RestaurantCard } from './RestaurantCard';
+export { RestaurantCard, withPromotedLabel } from './RestaurantCard';

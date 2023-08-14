@@ -3,4 +3,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
+
+    a {
+        text-decoration: none;
+        color: rgb(37, 35, 35);
+    }
 }

@@ -26,3 +26,15 @@ export const RestaurantCard = ({
         </div>
     );
 };
+
+export const withPromotedLabel = RestaurantCard => {
+    return props => {
+        return (
+            <>
+                <div className="veg">Veg</div>
+                <RestaurantCard {...props} />
+            </>
+
+        )
+    }
+}
