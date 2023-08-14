@@ -1,12 +1,11 @@
 import logo from '../../assets/images/food-logo.png';
 import { Link } from "react-router-dom";
-import './Header.scss';
 
 export const Header = () => {
     return (
-        <div className='app-header'>
+        <div className="shadow-md flex justify-between items-center px-48">
             <img src={logo} width="90" height="90" />
-            <div className='app-header__links'>
+            <div className="flex gap-12 text-lg font-medium">
                 <span>
                     <Link to="/">Home</Link>
                 </span>

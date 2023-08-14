@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import { RestaurantCard, withPromotedLabel } from "../RestaurantCard";
-import "./RestaurantCardContainer.scss";
 
 const RestaurantCardContainer = ({ restauarnts }) => {
 	const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
 	return (
-		<div className="res-card-container">
+		<div className="mt-4 gap-12 flex flex-wrap">
 		{restauarnts?.map((card) => {
-			console.log(card.info.veg);
 			const {
 			info: {
 				name,

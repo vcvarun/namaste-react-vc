@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCardContainer from './RestaurantCardContainer/RestaurantCardContainer';
 import RestaruantsHeader from './RestaurantsHeader/RestaurantsHeader';
-import './RestaurantsContainer.scss';
 import Shimmer from "./Shimmer/Shimmer";
 import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
 
@@ -60,7 +59,7 @@ export const RestaurantsContainer = () => {
     }
 
     return (
-        <div className='res-container'>
+        <div className="mt-4 px-36">
             <RestaruantsHeader 
                 filterRating={filterRating}
                 totalRestaurants={topRestaurants.length}

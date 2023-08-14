@@ -1,23 +1,21 @@
-import './Shimmer.scss';
-
 const Shimmer = () => {
     return (
-        <div className="shimmer-container">
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
+        <div className="flex flex-wrap mt-4 px-36">
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
+            <div className="bg-slate-200 w-64 h-72 m-4"></div>
         </div>
     );
 };
