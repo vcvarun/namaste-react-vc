@@ -1,3 +1,5 @@
+import { CLOUDINARY_URL } from "../../../utils";
+
 export const RestaurantCard = ({
     name,
     cuisines,
@@ -7,12 +9,12 @@ export const RestaurantCard = ({
     imageId
 }) => {
     return (
-        <div className="w-60 shadow-lg hover:scale-[0.95] origin-center transition-all">
+        <div className="w-60 h-full shadow-lg hover:scale-[0.95] origin-center transition-all">
             <img 
                 alt={name}
                 width="254"
                 height="160"
-                src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${imageId}`}
+                src={`${CLOUDINARY_URL}${imageId}`}
             />
             <div className="p-4">
                 <div className="font-semibold text-slate-700 text-lg">{name}</div>
@@ -32,10 +34,9 @@ export const withPromotedLabel = RestaurantCard => {
     return props => {
         return (
             <>
-                <div className="absolute bg-lime-400 text-white py-1 px-3">Veg</div>
+                <div className="absolute bg-lime-400 text-white py-1 px-3 z-[1]">Veg</div>
                 <RestaurantCard {...props} />
             </>
-
         )
     }
 }

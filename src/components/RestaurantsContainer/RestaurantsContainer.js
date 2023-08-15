@@ -3,6 +3,7 @@ import RestaurantCardContainer from './RestaurantCardContainer/RestaurantCardCon
 import RestaruantsHeader from './RestaurantsHeader/RestaurantsHeader';
 import Shimmer from "./Shimmer/Shimmer";
 import useOnlineStatus from "../../utils/hooks/useOnlineStatus";
+import { GET_RESTAURANTS } from "../../utils";
 
 export const RestaurantsContainer = () => {
     const [,setRestaurants] = useState([]);
@@ -20,7 +21,7 @@ export const RestaurantsContainer = () => {
     const fetchRestaurants = async () => {
         try {
             setLoading(true);
-            const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9967124&lng=77.5078297&page_type=DESKTOP_WEB_LISTING');
+            const response = await fetch(GET_RESTAURANTS);
             const jsonData = await response.json();
             const data = jsonData?.data;
 
@@ -52,14 +53,13 @@ export const RestaurantsContainer = () => {
     if(!onlineStatus) {
         return <h1>Looks like you are offline! Please check your internet connection.</h1>
     }
-
     
     if(loading) {
         return <Shimmer />;
     }
 
     return (
-        <div className="mt-4 px-36">
+        <div className="mt-4 px-36 pb-12">
             <RestaruantsHeader 
                 filterRating={filterRating}
                 totalRestaurants={topRestaurants.length}

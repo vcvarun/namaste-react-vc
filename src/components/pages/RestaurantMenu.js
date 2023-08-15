@@ -1,6 +1,8 @@
 import React from 'react';
 import Shimmer from '../RestaurantsContainer/Shimmer/Shimmer';
 import useRestaurantMenu from '../../utils/hooks/useRestaurantMenu';
+import { RestaurantDetail } from '../RestaurantDetail';
+import { Divider } from '../../common';
 
 export const RestaurantMenu = () => {
     const menuItems = useRestaurantMenu();
@@ -10,18 +12,17 @@ export const RestaurantMenu = () => {
     }
     const { name, areaName, avgRating, sla, costForTwoMessage } = menuItems?.data?.cards[0]?.card?.card?.info;
 
-    const { itemCards, title } = menuItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    const cardData = menuItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR;
  
     return (
-        <>
-            <h2>{name} - {avgRating}</h2>
-            <div>{areaName}</div>
-            <h3>{sla.slaString} -  {costForTwoMessage} </h3>
-            <br />
-            <h3>{title}</h3>
-            {itemCards?.map(item => (
-                <li key={item?.card?.info?.name}>{item?.card?.info?.name} - Rs.{item?.card?.info?.price/100}</li>
-            ))}
-        </>
+        <div className="px-[22rem] py-8">
+            <div className="px-4">
+                <div className="font-bold text-xl">{name} - {avgRating}</div>
+                <div>{areaName}</div>
+                <div className="mt-2 mb-6">{sla.slaString} -  {costForTwoMessage} </div>
+                <Divider />
+            </div>
+            <RestaurantDetail data={cardData?.cards} />
+        </div>
     );
 };
