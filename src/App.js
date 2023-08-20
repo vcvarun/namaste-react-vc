@@ -1,51 +1,27 @@
-import React, { Suspense, lazy } from "react";
-import { createRoot } from "react-dom/client";
+import React, { useContext, useState } from "react";
 import { Header } from './components/Header';
-import { RestaurantsContainer } from './components/RestaurantsContainer';
-import { About, Contact, ErrorPage, RestaurantMenu } from "./components/pages";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { UserContext, RestaurantContext } from "./context";
 
-const Grocery = lazy(() => import("./components/Grocery/Grocery"));
+const App = () => {
+    const [userName, setUserName] = useState('Default user');
 
-const AppLayout = () => {
     return (
         <div className="font-sans text-slate-800">
-            <Header />
-            <Outlet />
+            <UserContext.Provider value={{
+                userPlace: 'Bangalore',
+            }}>
+                <Header />
+
+                <RestaurantContext.Provider value={{
+                    userName,
+                    setUserName
+                }}> 
+                    <Outlet />
+                </RestaurantContext.Provider>
+            </UserContext.Provider>
         </div>
     );
 };
 
-const appRouter = createBrowserRouter([
-    {
-        path: '/',
-        element: <AppLayout />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: '/',
-                element: <RestaurantsContainer />
-            },
-            {
-                path: '/about',
-                element: <About />
-            },
-            {
-                path: 'Contact',
-                element: <Contact />
-            },
-            {
-                path: 'restaurant/:resId',
-                element: <RestaurantMenu />
-            },
-            {
-                path: '/grocery',
-                element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>
-            }
-        ]
-    }
-]);
-
-const root = createRoot(document.getElementById("root"));
-
-root.render(<RouterProvider router={appRouter} />);
+export default App;

@@ -10,7 +10,7 @@ export const RestaurantMenu = () => {
     if(!menuItems) {
         return <Shimmer />
     }
-    const { name, areaName, avgRating, sla, costForTwoMessage } = menuItems?.data?.cards[0]?.card?.card?.info;
+    const { name, areaName, avgRating, sla, costForTwoMessage } = menuItems?.data?.cards?.[0]?.card?.card?.info;
 
     const cardData = menuItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR;
  

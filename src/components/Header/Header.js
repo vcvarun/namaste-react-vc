@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import logo from '../../assets/images/food-logo.png';
 import { Link } from "react-router-dom";
+import { UserContext } from '../../context';
+
 
 export const Header = () => {
+    const { userPlace } = useContext(UserContext);
+
     return (
         <div className="shadow-md flex justify-between items-center px-48">
             <img src={logo} width="90" height="90" />
@@ -20,6 +25,9 @@ export const Header = () => {
                 </span>
                 <span>
                     <Link to="/grocery">Grocery</Link>
+                </span>
+                <span>
+                    <div className='text-sm'>location: {userPlace}</div>
                 </span>
             </div>
         </div>
