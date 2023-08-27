@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { RestaurantsContainer } from './components/RestaurantsContainer';
-import { About, Contact, ErrorPage, RestaurantMenu } from "./components/pages";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { About, Contact, ErrorPage, RestaurantMenu, Cart } from "./components/pages";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 
 const Grocery = lazy(() => import("./components/Grocery/Grocery"));
@@ -24,6 +24,10 @@ const appRouter = createBrowserRouter([
             {
                 path: 'Contact',
                 element: <Contact />
+            },
+            {
+                path: '/cart',
+                element: <Cart />
             },
             {
                 path: 'restaurant/:resId',

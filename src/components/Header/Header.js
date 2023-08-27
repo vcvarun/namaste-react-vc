@@ -2,10 +2,12 @@ import { useContext } from 'react';
 import logo from '../../assets/images/food-logo.png';
 import { Link } from "react-router-dom";
 import { UserContext } from '../../context';
-
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
     const { userPlace } = useContext(UserContext);
+
+    const cartItems = useSelector(store => store.cart?.items);
 
     return (
         <div className="shadow-md flex justify-between items-center px-48">
@@ -21,7 +23,7 @@ export const Header = () => {
                     <Link to="/contact">Contact</Link>
                 </span>
                 <span>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/cart">Cart ({cartItems?.length} items)</Link>
                 </span>
                 <span>
                     <Link to="/grocery">Grocery</Link>

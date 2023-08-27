@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Accordion, Divider, MenuItem } from '../../common';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../store/cartSlice';
+import CardBody from './CardBody';
 
-export const RestaurantDetail = ({data}) => {
+export const RestaurantDetail = ({ data }) => {
     const [showItemIndex, setShowItemIndex] = useState(0);
+    const dispatch = useDispatch();
 
     const handleShowItem = index => {
         if (index === showItemIndex) {
@@ -12,27 +16,14 @@ export const RestaurantDetail = ({data}) => {
         setShowItemIndex(index);
     };
 
+    const handleAddItem = item => {
+        dispatch(addItem(item));
+    };
+
     const itemCategory = data?.filter(card => card?.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory');
 
     const renderAccordionBody = itemCards => {
-        return itemCards?.map(item => {
-            const { id, imageId, name, description, price = 0 } = item?.card?.info;
-            return (
-                <div key={id}>
-                    <MenuItem
-                        imageId={imageId}
-                        name={name}
-                        price={price/100}
-                        description={description}
-                        className={{
-                            root: 'mt-4 mb-8'
-                        }}
-                    />
-                    <Divider />
-                </div>
-
-            );
-        });
+        return <CardBody itemCards={itemCards} handleAddItem={handleAddItem} />
     };
 
     return (

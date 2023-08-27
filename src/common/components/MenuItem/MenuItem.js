@@ -6,6 +6,7 @@ export const MenuItem = ({
     name = '',
     price = 0,
     description = '',
+    handleAddItem,
     className = {}
 }) => {
     return (
@@ -17,7 +18,12 @@ export const MenuItem = ({
             </div>
             <div className="relative">
                 <img src={`${CLOUDINARY_URL}${imageId}`} className="w-48 h-20 object-cover rounded-md" />
-                <button className="absolute top-14 left-6 bg-white px-4 py-2 rounded-md text-lime-600 font-bold text-xs border border-slate-300 shadow-md">ADD +</button>
+                <button
+                    className="absolute top-14 left-6 bg-white px-4 py-2 rounded-md text-lime-600 font-bold text-xs border border-slate-300 shadow-md"
+                    onClick={handleAddItem}
+                >
+                    ADD +
+                </button>
             </div>
         </div>
     );

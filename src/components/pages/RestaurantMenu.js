@@ -15,7 +15,7 @@ export const RestaurantMenu = () => {
     const cardData = menuItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR;
  
     return (
-        <div className="px-[22rem] py-8">
+        <div className="px-[30rem] py-8">
             <div className="px-4">
                 <div className="font-bold text-xl">{name} - {avgRating}</div>
                 <div>{areaName}</div>
