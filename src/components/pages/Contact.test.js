@@ -1,0 +1,12 @@
+import { render, screen } from "@testing-library/react";
+import { Contact } from "./Contact";
+import "@testing-library/jest-dom";
+
+test("To check if Contact Page rendered correctly", () => {
+    render(<Contact />);
+
+    const heading = screen.getByRole("heading");
+
+    expect(heading).toBeInTheDocument();
+    
+});
